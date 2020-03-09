@@ -9,6 +9,6 @@ Students are expected to:
 Student Info
 =========================
 
-* Student Name: Phan Minh Duong
+* Student Name: Phan Minh Duong 
 * Student ID: 
 
