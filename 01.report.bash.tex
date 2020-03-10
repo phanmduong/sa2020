@@ -1,0 +1,65 @@
+\documentclass[article, paper=a4, fontsize=11pt]{scrartcl}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{center}
+Phan Minh Duong
+\end{center}
+\begin{center}
+December 20, 2019
+\end{center}
+
+Let's try some new command:
+
+\section{List logged in users}
+
+List everyone logged in and save the list in a file called "users" in your own home directory:
+
+w $>$ $ \sim$/users
+
+\section{List processes in users}
+
+List all processes that are running and add this list to the end of the “users” file:
+
+ps  aux $>$ $ \sim$/user
+
+\section{List users logged }
+
+List everyone who is logged on sorted by their username
+
+who $\mid$  cut -d' ' -f1 $\mid$ sort
+
+\section{List sessions of user }
+
+Count number of session each logged in user, sorted by this number in descending order
+
+w $\mid$ sed '1,2d' $\mid$ cut -f1 -d' ' $\mid$ sort -r $\mid$ uniq -c
+
+\section{Content of 3 lines first}
+
+Show content of the first and last 3 lines of the file “/etc/fstab”
+
+head -3 /etc/fstab
+
+\section{Retrieve line number 5 to 10}
+
+Retrieve line number 5 to 10 from the file “/etc/fstab” and
+write these lines into a new file “extract.txt”
+
+$<$ /etc/fstab head -10 $\mid$ tail -6 $>$ “extract.txt”
+
+\section{List all files in current directory}
+
+List all files in current directory, recursively, to which the user has full permissions
+
+ls -la
+
+\section{Compare 2 file}
+
+Compare two files and show percentage of similarities between them
+
+sdiff -B -b -s file1 file2 $\mid$ wc
+
+\end{document}
