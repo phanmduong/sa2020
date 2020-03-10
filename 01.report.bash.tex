@@ -23,7 +23,7 @@ w $>$ $ \sim$/users
 
 List all processes that are running and add this list to the end of the “users” file:
 
-ps  aux $>$ $ \sim$/user
+ps  aux $>>$ $ \sim$/users
 
 \section{List users logged }
 
@@ -41,7 +41,7 @@ w $\mid$ sed '1,2d' $\mid$ cut -f1 -d' ' $\mid$ sort -r $\mid$ uniq -c
 
 Show content of the first and last 3 lines of the file “/etc/fstab”
 
-head -3 /etc/fstab
+head -3 /etc/fstab \&\&  tail -3 /etc/fstab
 
 \section{Retrieve line number 5 to 10}
 
@@ -54,7 +54,7 @@ $<$ /etc/fstab head -10 $\mid$ tail -6 $>$ “extract.txt”
 
 List all files in current directory, recursively, to which the user has full permissions
 
-ls -la
+ls -lRa
 
 \section{Compare 2 file}
 
