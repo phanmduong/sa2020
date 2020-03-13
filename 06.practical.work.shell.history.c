@@ -30,10 +30,8 @@ void handler(int signal_num){
     switch (signal_num)
     {
     case SIGTSTP:
-        if (pid !=0 ){
-            kill(pid, SIGTERM);
-            exit(0);
-        }
+        kill(pid, SIGTERM);
+        exit(0);
     case SIGTERM: 
         quitListener();
         exit(0);
