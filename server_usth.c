@@ -46,11 +46,12 @@ int main(int argc, char *argv[]) {
         printf("server> accepting incoming connection\n");
         clientfd = accept(sockfd, (struct sockaddr *) &saddr, &clen);
         // TODO: communicate with connected client here
-        recv(clientfd, &messageRecv, sizeof(messageRecv), 0);
-        printf("Server received a message is: '%s'\n",messageRecv);
-        gets(&input);
-        send(clientfd, &input, sizeof(input), 0);
-       
+        while(1){
+            recv(clientfd, &messageRecv, sizeof(messageRecv), 0);
+            printf("Server received a message is: '%s'\n",messageRecv);
+            gets(&input);
+            send(clientfd, &input, sizeof(input), 0);
+        }
     }
     close(clientfd);
 
